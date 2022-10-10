@@ -19,7 +19,7 @@ def get_template_values():
     return data
 
 def render_alarm_template():
-    template_path = os.getcwd() + "templates/alarms.j2'
+    template_path = os.getcwd() + "templates/alarms.j2"
 
     with open(template_path) as fh:
         alarm_template = Template(fh.read())
@@ -30,7 +30,7 @@ def render_alarm_template():
 
 def render_metric_template():
     data = get_template_values()
-    template_path = os.getcwd() + "templates/alarms.j2'
+    template_path = os.getcwd() + "templates/alarms.j2"
 
     with open(template_path) as fh:
         topic_template = Template(fh.read())
