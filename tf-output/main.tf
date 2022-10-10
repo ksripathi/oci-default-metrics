@@ -1,8 +1,8 @@
 
-resource "oci_monitoring_alarm" "OIT_DEV_COMPUTES_CPU_CRITICAL_1" {
+resource "oci_monitoring_alarm" "OIT_DEV_COMPUTES_CPU_CRITICAL_11" {
   compartment_id        = var.compartment_id
   destinations          = [oci_ons_notification_topic.oci_topic.id]
-  display_name          = "OIT_DEV_COMPUTES_CPU_CRITICAL_1"
+  display_name          = "OIT_DEV_COMPUTES_CPU_CRITICAL_11"
   is_enabled            = true
   metric_compartment_id = var.compartment_id
   namespace             = "oci_computeagent"
@@ -23,10 +23,10 @@ resource "oci_monitoring_alarm" "OIT_DEV_COMPUTES_CPU_CRITICAL_1" {
   }
 }
 
-resource "oci_monitoring_alarm" "OIT_DEV_COMPUTES_MEMORY_CRITICAL_1" {
+resource "oci_monitoring_alarm" "OIT_DEV_COMPUTES_MEMORY_CRITICAL_11" {
   compartment_id        = var.compartment_id
   destinations          = [oci_ons_notification_topic.oci_topic.id]
-  display_name          = "OIT_DEV_COMPUTES_MEMORY_CRITICAL_1"
+  display_name          = "OIT_DEV_COMPUTES_MEMORY_CRITICAL_11"
   is_enabled            = true
   metric_compartment_id = var.compartment_id
   namespace             = "oci_computeagent"
