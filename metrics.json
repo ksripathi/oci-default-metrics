@@ -1,6 +1,6 @@
 [
   {
-    "alarm_display_name": "OIT_DEV_COMPUTES_CPU_CRITICAL",
+    "alarm_display_name": "OIT_DEV_COMPUTES_CPU_CRITICAL_1",
     "alarm_description" : "Test alarms",
     "alarm_namespace": "oci_computeagent",
     "alarm_query": "CpuUtilization[5m].mean() > 85",
@@ -18,7 +18,7 @@
     "alarm_topic_name": "topic7"
   },
   {
-    "alarm_display_name": "OIT_DEV_COMPUTES_MEMORY_CRITICAL",
+    "alarm_display_name": "OIT_DEV_COMPUTES_MEMORY_CRITICAL_1",
     "alarm_description" : "Test alarms",
     "alarm_namespace": "oci_computeagent",
     "alarm_query": "MemoryUtilization[15m].mean() > 85",
