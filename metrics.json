@@ -1,0 +1,38 @@
+[
+  {
+    "alarm_display_name": "OIT_DEV_COMPUTES_CPU_CRITICAL",
+    "alarm_description" : "Test alarms",
+    "alarm_namespace": "oci_computeagent",
+    "alarm_query": "CpuUtilization[5m].mean() > 85",
+    "alarm_severity": "WARNING",
+    "alarm_is_enabled": true,
+    "alarm_body": "Critical - High CPU utilization reached",
+    "alarm_message_format": "ONS_OPTIMIZED",
+    "alarm_metric_compartment_id_in_subtree": false,
+    "alarm_pending_duration": "PT5M",
+    "alarm_repeat_notification_duration": "PT2H",
+    "alarm_resolution": "1m",
+    "alarm_suppression_time_suppress_from": "2022-12-31T18:00:00.000Z",
+    "alarm_suppression_time_suppress_until": "2022-12-31T19:00:00.000Z",
+    "alarm_suppression_description": "System Maintenance",
+    "alarm_topic_name": "topic7"
+  },
+  {
+    "alarm_display_name": "OIT_DEV_COMPUTES_MEMORY_CRITICAL",
+    "alarm_description" : "Test alarms",
+    "alarm_namespace": "oci_computeagent",
+    "alarm_query": "MemoryUtilization[15m].mean() > 85",
+    "alarm_severity": "CRITICAL",
+    "alarm_is_enabled": true,
+    "alarm_body": "Critical - High Memory utilization reached",
+    "alarm_message_format": "ONS_OPTIMIZED",
+    "alarm_metric_compartment_id_in_subtree": false,
+    "alarm_pending_duration": "PT5M",
+    "alarm_repeat_notification_duration": "PT2H",
+    "alarm_resolution": "1m",
+    "alarm_suppression_time_suppress_from": "2029-02-01T18:00:00.000Z",
+    "alarm_suppression_time_suppress_until": "2029-02-01T19:00:00.000Z",
+    "alarm_suppression_description": "System Maintenance",
+    "alarm_topic_name": "topic3"
+  }
+]
