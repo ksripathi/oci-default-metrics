@@ -9,7 +9,8 @@ import os
 
 def get_template_values():
     # Opening JSON file
-    f = open('/Users/sripathikammari/projects/oci-metric-templates/metrics.json')
+    template_path = os.getcwd() + "/metrics.json"
+    f = open(template_path)
 
     # returns JSON object as
     # a dictionary
@@ -18,7 +19,7 @@ def get_template_values():
     return data
 
 def render_alarm_template():
-    template_path = './templates/alarms.j2'
+    template_path = os.getcwd() + "templates/alarms.j2'
 
     with open(template_path) as fh:
         alarm_template = Template(fh.read())
@@ -29,14 +30,14 @@ def render_alarm_template():
 
 def render_metric_template():
     data = get_template_values()
-    template_path = '/Users/sripathikammari/projects/oci-metric-templates/templates/alarms.j2'
+    template_path = os.getcwd() + "templates/alarms.j2'
 
     with open(template_path) as fh:
         topic_template = Template(fh.read())
 
     output = topic_template.render(alarms=data).replace('\n\n\n', '\n\n')
     os.system("mkdir -p tf-output")
-    file = "/Users/sripathikammari/projects/oci-metric-templates/tf-output/main.tf"
+    file = os.getcwd() + "/tf-output/main.tf"
     f = open(file, "w")
     f.write(output)
     f.close()
