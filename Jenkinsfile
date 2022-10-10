@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', credentialsId: 'orahub', url: 'https://orahub.oci.oraclecorp.com/oit-eng-monitoring-and-logging/oci-metric-templates'
+                git branch: 'main', credentialsId: 'orahub', url: 'https://github.com/ksripathi/oci-default-metrics/'
             }
         }
         stage('terraform format check') {
