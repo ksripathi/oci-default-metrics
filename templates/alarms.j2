@@ -1,0 +1,25 @@
+{% for alarm in alarms %}
+resource "oci_monitoring_alarm" "{{alarm["alarm_display_name"]}}" {
+  compartment_id        = var.compartment_id
+  destinations          = [oci_ons_notification_topic.oci_topic.id]
+  display_name          = "{{alarm["alarm_display_name"]}}"
+  is_enabled            = {{alarm["alarm_is_enabled"] | lower}}
+  metric_compartment_id = var.compartment_id
+  namespace             = "{{alarm["alarm_namespace"]}}"
+  query                 = "{{alarm["alarm_query"]}}"
+  severity              = "{{alarm["alarm_severity"]}}"
+
+  body                             = "{{alarm["alarm_body"]}}"
+  message_format                   = "{{alarm["alarm_message_format"]}}"
+  metric_compartment_id_in_subtree = {{alarm["alarm_metric_compartment_id_in_subtree"] | lower}}
+  pending_duration                 = "{{alarm["alarm_pending_duration"]}}"
+  repeat_notification_duration     = "{{alarm["alarm_repeat_notification_duration"]}}"
+  resolution                       = "{{alarm["alarm_resolution"]}}"
+
+  suppression {
+    time_suppress_from  = "{{alarm["alarm_suppression_time_suppress_from"]}}"
+    time_suppress_until = "{{alarm["alarm_suppression_time_suppress_until"]}}"
+    description = "{{alarm["alarm_description"]}}"
+  }
+}
+{% endfor %}
